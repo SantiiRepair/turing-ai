@@ -1,11 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { Link, Button, Flex } from "@chakra-ui/react";
-
-type Props = {
-  handleOpenModal: any;
-};
+import { Link, Flex } from "@chakra-ui/react";
 
 const translate = keyframes`
   from {
@@ -21,6 +17,7 @@ const Text = styled.div`
  color: #fff;
  @media screen and (max-width: 768px) { 
     text-align: center;
+    margin-top: -8%;
   }
 `
 
@@ -37,7 +34,8 @@ const Tow = styled.div`
 `
 
 const Typography = styled.h1`
-  font-size: 40px;
+  letter-spacing: 1px;
+  font-size: 55px;
   font-family: 'Poppins';
   font-weight: bold;
   @media screen and (max-width: 768px) { 
@@ -46,10 +44,14 @@ const Typography = styled.h1`
 `
 
 const Typographe = styled.h1`
+  letter-spacing: 1px;
   font-size: 40px;
+  margin-top: -40px;
   font-family: 'Poppins';
   font-weight: bold;
-  color: #37b275;
+  background: -webkit-linear-gradient(#b2f8f3, #1c847d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   @media screen and (max-width: 768px) { 
    font-size: 35px;
    margin-top: -20px;
@@ -63,13 +65,35 @@ const Typographo = styled.h1`
 `
 
 const Logo = styled.img`
+ width: 310px;
  animation: ${translate} 5s alternate infinite;
  @media screen and (max-width: 768px) { 
-    max-width: 50%; 
+    max-width: 100%;
   }
 `
 
-function Yep({ handleOpenModal }: Props) {
+const Button = styled.button`
+   font-family: 'Poppins';
+   background-color: transparent;
+   background: transparent;
+   height: 2.68rem;
+   min-width: 12rem;
+   outline: 1px solid;
+   outline-color: #fff;
+   color: #fff;
+   font-size: 1.125rem;
+   font-weight: 500;
+   border-radius: 6px;
+   border: 1px solid transparent;
+   @media screen and (max-width: 768px) { 
+    height: 3.5rem;
+    min-width: 17.5rem;
+    font-size: 1.85rem;
+   }
+`
+
+
+function Yep() {
 
  return (
   <Flex
@@ -89,29 +113,7 @@ function Yep({ handleOpenModal }: Props) {
      <Typographo>
        most powerfull AIs to the mass public for free
      </Typographo>
-      <Button
-      fontFamily='Poppins'
-      bgColor='transparent'
-      mt='20'
-      mb='3'
-      height='2.5rem'
-      minWidth='12.5rem'
-      outline='1px solid'
-      outlineColor='#ffffff'
-      color="#ffffff"
-      fontSize="1.125rem"
-      fontWeight="500"
-      borderRadius="6px"
-      border="1px solid transparent"
-      _hover={{
-        borderColor: "#9c9c9c",
-        color: "#9c9c9c",
-      }}
-      _active={{
-        backgroundColor: "#9c9c9c",
-        borderColor: "#9c9c9c",
-      }}
-    >
+     <Button>
       Join our discord
     </Button>
     </Text>  

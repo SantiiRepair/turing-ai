@@ -2,10 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Foot = styled.div`
-  height: 45px; 
   display: flex;
   background-color: #00000;
-  padding: 0.2rem calc((100vw - 1000px) / 2); 
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 768px) { 
@@ -13,12 +11,12 @@ const Foot = styled.div`
    flex-direction: column;
    justify-content: center;
    align-items: center;
-  }
+   transform: translateY(-15px);
+  } 
 `
 
 const Flex = styled.div`
   display: flex;
-  padding: 0.2rem calc((100vw - 1000px) / 2); 
   z-index: 12;
   @media screen and (max-width: 768px) { 
    flex-direction: row;
@@ -36,8 +34,10 @@ const Adder = styled.div`
 `
 
 const Logo = styled.img`
- width: 15%; 
+ width: 12%;
+ transform: translateX(30px);
  @media screen and (max-width: 768px) { 
+    transform: translateX(0px);
     width: 40%;
     margin-left: 15px;
     margin-bottom: 10px;
@@ -47,7 +47,7 @@ const Logo = styled.img`
 `
 
 const Red = styled.img`
- width: 20%; 
+ width: 12%; 
  margin-left: 15px;
  @media screen and (max-width: 768px) { 
     max-width: 10%; 

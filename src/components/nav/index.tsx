@@ -1,17 +1,26 @@
 import React,{ useState } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { FaBars } from 'react-icons/fa'
 import { Button } from "@chakra-ui/react";
 
 function Navbar() {
 
-const [bool, setBool] = useState(null)
-  function Active() {
+const [bool, setBool] = useState('none')
+
+ function Active() {
     setBool('flex')
     if(bool === 'flex') {
-      setBool(null)
+      setBool('none')
     }
   }
+
+const translate = keyframes`
+  from {
+    transform: translateX(-80px);
+  } to {
+    transform: translateX(1px);
+  } 
+`
 
 const Nav = styled.nav`
   height: 45px; 
@@ -43,6 +52,7 @@ const LG = styled.div`
   
 const NavData = styled.a` 
   color: #fff; 
+  font-size: larger;
   display: flex; 
   align-items: center; 
   text-decoration: none; 
@@ -91,11 +101,12 @@ const Bars = styled(FaBars)`
  
 const NavActive = styled.div` 
   display: none; 
-  background-color: #1d1b31;
+  background-color: #0000;
   height: 100vh;
   @media screen and (max-width: 768px) { 
+    animation: ${translate} 0.3s linear;
     display: ${bool}; 
-    background-color: #1d1b31;
+    background-color: #0000;
     height: 20vh;
     flex-direction: column;
     margin-top: 30px; 
@@ -117,9 +128,6 @@ const NavBtn = styled.nav`
   display: flex; 
   align-items: center; 
   margin-right: 24px; 
-  /* Third Nav */
-  /* justify-content: flex-end; 
-  width: 100vw; */
   @media screen and (max-width: 768px) { 
     display: none; 
   } 
@@ -146,6 +154,22 @@ const NavBtnConnect = styled.button`
   } 
 `
 
+  function Link1() {
+   window.open('https://bit.ly/chatgpt-whatsapp');
+  }
+
+  function Link2() {
+   window.open('https://');
+  }
+
+  function Link3() {
+   window.open('https://dsc.gg/turing');
+  }
+
+  function Contact() {
+   window.open('https://');
+  }
+
   return ( 
 
     <> 
@@ -168,7 +192,7 @@ const NavBtnConnect = styled.button`
       bgColor='transparent'
       mb='3'
       height='2.5rem'
-      minWidth='2.5rem'
+      minWidth='7.3rem'
       outline='1px solid'
       outlineColor='#ffffff'
       color="#ffffff"
@@ -190,10 +214,10 @@ const NavBtnConnect = styled.button`
         </NavBtn> 
       </Nav> 
      <NavActive>
-          <NavJot href='https://bit.ly/chatgpt-whatsapp'>Bot WhatsApp</NavJot> 
-          <NavJot href='https://t.me/'>Bot Telegram</NavJot> 
-          <NavJot href='https://dsc.gg/turing'>Bot Discord</NavJot> 
-          <NavJot href='https://'>Contact</NavJot> 
+          <NavJot onClick={ Link1 }>Bot WhatsApp</NavJot> 
+          <NavJot onClick={ Link2 }>Bot Telegram</NavJot> 
+          <NavJot onClick={ Link3 }>Bot Discord</NavJot> 
+          <NavJot onClick={ Contact }>Contact</NavJot> 
      </NavActive>
     </> 
 
